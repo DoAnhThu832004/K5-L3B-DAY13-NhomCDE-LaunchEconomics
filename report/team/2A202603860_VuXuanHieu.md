@@ -4,7 +4,7 @@
 
 - Họ tên: Vũ Xuân Hiếu
 - MSSV: 2A202603860
-- Email: vuhieu3205@gmail.com
+- Email: 26ai.hieuvx2@vinuni.edu.vn
 - Vai trong nhóm: Người kiểm soát đặc tả / điều kiện "Xong khi" (CP1–CP2); Người gắn nhãn 2 kiêm giữ hồ sơ (CP3–CP5).
 
 ## 2. Phần việc phụ trách
