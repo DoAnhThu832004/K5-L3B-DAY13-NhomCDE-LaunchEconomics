@@ -13,7 +13,7 @@
 | --: |----------------| ---- | ----- |----------------|------------------------------------------------------------|
 |   1 | Đỗ Anh Thư     | 2A202603815 | adugarux4@gmail.com | DoAnhThu832004 | Người viết code (CP1, CP4) & Giữ hồ sơ & Người kiểm số CP4 |
 |   2 | Võ Thanh Huy   | 2A202603879 | huyvo180700@gmail.com | VThanh-Huy     | Người kiểm số CP1 & Người gắn nhãn 1 (CP3)                 |
-|   3 | Nguyễn Long Vũ |      | | mhoo40         | Người viết code (CP2) & Kế hoạch pilot (CP4)               |
+|   3 | Nguyễn Long Vũ | 2A202603842 | nguyenlongvu17082004@gmail.com| mhoo40         | Người viết code (CP2) & Kế hoạch pilot (CP4)               |
 |   4 | Vũ Xuân Hiếu   | 2A202603860 | vuhieu3205@gmail.com | vuhieuvh       | Kiểm soát đặc tả (CP1–CP2), Người gắn nhãn 2 & Giữ hồ sơ (CP3–CP5) |
 
 Bốn vai của lab:
