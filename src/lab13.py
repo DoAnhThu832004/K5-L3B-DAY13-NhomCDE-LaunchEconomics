@@ -157,6 +157,39 @@ if __name__ == '__main__':
     print(f"\nB4 (9 phút làm lại): {tong_9p / so_thanh_cong:,.0f} đ ({tong_9p / so_thanh_cong / 12000:.2f}x)")
     print(f"B4 (15,3 phút làm lại): {tong_15_3p / so_thanh_cong:,.0f} đ ({tong_15_3p / so_thanh_cong / 12000:.2f}x)")
     
-    # TODO CP4 · Nhiệm vụ D: cỡ mẫu.
-    #   from statsmodels.stats.proportion import proportion_effectsize
-    #   from statsmodels.stats.power import NormalIndPower
+    # Nhiệm vụ D · CP4: cỡ mẫu (D1) và tỉ lệ mở lại 7 ngày (D3).
+    print('\n--- D1 · Cỡ mẫu pilot (baseline=0.70, +5 điểm, alpha=0.05, power=0.80, ICC=0.02) ---')
+    from statistics import NormalDist
+    from statsmodels.stats.proportion import proportion_effectsize
+    from statsmodels.stats.power import NormalIndPower
+
+    def co_mau(p1, p2, alpha=0.05, power=0.80):
+        za = NormalDist().inv_cdf(1 - alpha / 2)
+        zb = NormalDist().inv_cdf(power)
+        pb = (p1 + p2) / 2
+        return math.ceil((za * math.sqrt(2 * pb * (1 - pb))
+                          + zb * math.sqrt(p1 * (1 - p1) + p2 * (1 - p2))) ** 2 / (p2 - p1) ** 2)
+
+    icc = 0.02
+    n_5pt = co_mau(0.70, 0.75)
+    de_75 = 1 + (75 - 1) * icc
+    n_nv_75 = math.ceil(n_5pt * de_75)
+    nv_moi_nhom = math.ceil(n_nv_75 / 75)
+    n_hd_20nv = 20 / icc
+    n_hd_6depot = 6 / icc
+
+    n_6pt = co_mau(0.70, 0.76)
+    m_min = math.ceil(n_6pt * (1 - icc) / (20 - n_6pt * icc))
+    de_6pt = 1 + (m_min - 1) * icc
+    es_5pt = proportion_effectsize(0.75, 0.70)
+    power_o_5pt = NormalIndPower().power(effect_size=es_5pt, nobs1=n_6pt, alpha=0.05, ratio=1.0)
+
+    print(f"a) Chia theo yêu cầu (+5 điểm): {n_5pt:,} yêu cầu/nhóm")
+    print(f"b) Theo nhân viên, m=75: DE={de_75:.2f}, cần {n_nv_75:,}/nhóm -> {nv_moi_nhom} người/nhóm (tổng {nv_moi_nhom*2} > 40: không đủ người)")
+    print(f"c) 20 nhân viên/nhóm: tối đa c/ICC = {n_hd_20nv:,.0f} < {n_5pt:,}: không đạt")
+    print(f"d) 6 depot/nhóm: tối đa c/ICC = {n_hd_6depot:,.0f}")
+    print(f"e) Mức chênh 6 điểm ({n_6pt}/nhóm), 20 nv/nhóm: m >= {m_min} yc/người (DE={de_6pt:.2f}); power nếu thật +5 điểm = {power_o_5pt:.2f}")
+
+    mo_lai_all = reqs['mo_lai_trong_7_ngay'].mean() * 100
+    mo_lai_pv = pv['mo_lai_trong_7_ngay'].mean() * 100
+    print(f"\nTỉ lệ mo_lai_trong_7_ngay hiện tại: {mo_lai_all:.2f}% (toàn mẫu) | {mo_lai_pv:.2f}% (noi_dia + hang_nang)")

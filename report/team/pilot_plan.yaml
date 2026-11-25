@@ -3,11 +3,11 @@
 # Kiểm tra đọc được: python -c "import yaml; yaml.safe_load(open('../report/team/pilot_plan.yaml'))"
 #
 # D1 · Cỡ mẫu (baseline 0,70; mục tiêu +5 điểm; alpha 0,05; power 0,8; ICC 0,02)
-#   a) Chia theo yêu cầu:
-#   b) Theo nhân viên, m = 75:
-#   c) 20 nhân viên mỗi nhóm:
-#   d) 6 depot mỗi nhóm:
-#   e) Mức chênh 6 điểm (859 mỗi nhóm), 20 nhân viên mỗi nhóm:
+#   a) Chia theo yêu cầu: 1.251 yêu cầu mỗi nhóm
+#   b) Theo nhân viên, m = 75: DE = 2,48; cần 3.103 yêu cầu/nhóm (42 người/nhóm, tổng 84 > 40: không đủ người)
+#   c) 20 nhân viên mỗi nhóm: giới hạn c / ICC = 20 / 0,02 = tối đa 1.000 < 1.251 (không đạt cho 5 điểm)
+#   d) 6 depot mỗi nhóm: giới hạn 6 / 0,02 = tối đa 300 (không đạt và dưới 20 cụm)
+#   e) Mức chênh 6 điểm (859 mỗi nhóm), 20 nhân viên mỗi nhóm: m >= 299 yêu cầu/người (DE = 6,96)
 #
 # D2 · Năm câu kiểm tra "tách được tác động" với cách chia đã chọn (mỗi câu một dòng):
 #   1. Đối chứng chạy cùng thời gian:
@@ -16,9 +16,9 @@
 #   4. Chỉ số chính, ngưỡng, ngày quyết định đã viết trước:
 #   5. Ít nhất 20 cụm mỗi nhóm:
 #
-# Đánh đổi đã chấp nhận (nếu cách chia chưa đạt cả hai điều kiện):
+# Đánh đổi đã chấp nhận (nếu cách chia chưa đạt cả hai điều kiện): Chọn chia theo nhân viên (20 + 20), chấp nhận MDE 6 điểm (n=859/nhóm, m>=299); nếu tác động thật chỉ 5 điểm thì power giảm còn ~0,64.
 #
-# Tỉ lệ mo_lai_trong_7_ngay hiện tại và ngưỡng an toàn đã chọn:
+# Tỉ lệ mo_lai_trong_7_ngay hiện tại và ngưỡng an toàn đã chọn: Hiện tại 4,25% toàn mẫu (51/1.200) và 3,97% trong phạm vi noi_dia + hang_nang; chọn ngưỡng so với đối chứng (cao hơn >= 2 điểm) kèm trần tuyệt đối 6%.
 
 pilot:
   owner: "?"                      # một người có tên vai trò, không ghi "cả đội"
@@ -31,12 +31,12 @@ pilot:
   primary_metric:
     name: dong_trong_24h_khong_mo_lai_7_ngay
     baseline: 0.70
-    mde: 0.05
+    mde: 0.06
     alpha: 0.05
     power: 0.80
-    n_per_arm: "?"
-    design_effect: "?"            # 1 nếu chia theo yêu cầu
-    clusters_per_arm: "?"         # để trống nếu chia theo yêu cầu
+    n_per_arm: 859
+    design_effect: 6.96           # 1 nếu chia theo yêu cầu
+    clusters_per_arm: 20          # để trống nếu chia theo yêu cầu
   identifiability:
     concurrent_control: "?"
     spillover_risk: "?"
