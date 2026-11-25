@@ -14,7 +14,7 @@
 |   1 | Đỗ Anh Thư     | 2A202603815 | adugarux4@gmail.com | DoAnhThu832004 | Người viết code (CP1, CP4) & Giữ hồ sơ & Người kiểm số CP4 |
 |   2 | Võ Thanh Huy   | 2A202603879 | huyvo180700@gmail.com | VThanh-Huy     | Người kiểm số CP1 & Người gắn nhãn 1 (CP3)                 |
 |   3 | Nguyễn Long Vũ |      | | mhoo40         | Người viết code (CP2) & Kế hoạch pilot (CP4)               |
-|   4 | Vũ Hiếu        |      |  | vuhieuvh       | Người gắn nhãn 2 (CP3) & Rà soát hồ sơ                     |
+|   4 | Vũ Xuân Hiếu   | 2A202603860 | vuhieu3205@gmail.com | vuhieuvh       | Kiểm soát đặc tả (CP1–CP2), Người gắn nhãn 2 & Giữ hồ sơ (CP3–CP5) |
 
 Bốn vai của lab:
 
@@ -93,22 +93,23 @@ Ví dụ: `report/team/20241234_NguyenVanAn.md`.
 - Commits trên repo: `CP2 code, bang_chi_phi`, `Merge branch 'Vu/CP2'`, `edit pilot_plan.yaml`.
 - Kết quả chạy B1–B4 trong `src/lab13.py` và bảng B trong `bang_chi_phi.md`.
 
-## VuHieu
+## VuXuanHieu-2A202603860
 
 ### Phần việc phụ trách
 
-- Người gắn nhãn 2 tại CP3 (nhiệm vụ C).
-- Người giữ hồ sơ ban đầu (khởi tạo `ho_so_launch_v0.md` ở CP1).
-- Trợ giúp rà soát câu trả lời và số liệu bảng chi phí A2–A3.
+- Kiểm soát đặc tả, điều kiện "Xong khi" và rà soát số liệu, câu trả lời bảng chi phí (CP1–CP2).
+- Người gắn nhãn 2 tại CP3 (nhiệm vụ C) và giữ khung hồ sơ `ho_so_launch_v0.md`.
+- Chuẩn bị phản biện duyệt chéo Gate 2a và rà soát checklist trước khi nộp.
 
 ### Đóng góp cụ thể
 
-- Khởi tạo khung hồ sơ Gate 2a trong `ho_so_launch_v0.md` ngay từ đầu buổi lab.
-- Trả lời các câu hỏi phân tích kinh tế A2, A3 trong `bang_chi_phi.md`.
-- Độc lập gắn nhãn 20 ca lỗi ở CP3, thảo luận chốt quy tắc phân biệt cho các ca không trùng.
+- Xác minh đầu ra `src/lab13.py` CP1 và bổ sung 3 câu trả lời phân tích kinh tế A2, A3 trong `bang_chi_phi.md`.
+- Khởi tạo khung hồ sơ Gate 2a trong `ho_so_launch_v0.md` và cập nhật nháp CP2.
+- Độc lập gắn nhãn 20 ca lỗi ở CP3, đối chiếu đạt đồng thuận 85% (17/20 ca) với Võ Thanh Huy và chốt quy tắc phân biệt các ca không trùng.
+- Rà soát toàn bộ hồ sơ nộp cuối buổi, sửa tên nhóm trong `phieu_cham.md` và hoàn thiện báo cáo cá nhân `2A202603860_VuXuanHieu.md`.
 
 ### Bằng chứng
 
-- Commits trên repo: `docs(cp1): complete A2-A3 answers in bang_chi_phi and init ho_so_launch_v0`.
-- Bộ nhãn Người 2 trong `report/team/bang_loi.md`.
+- Commits trên repo: `docs(cp1): complete A2-A3 answers in bang_chi_phi and init ho_so_launch_v0` (`cfbe245`, PR `#3` merge tại `f2be525`), `docs(cp3): add annotator 2 labels and 5-case mitigation table; update ho_so_launch_v0 with CP2` (`c2ddf6b`).
+- Bộ nhãn Người 2 trong `report/team/bang_loi.md` và báo cáo cá nhân `report/team/2A202603860_VuXuanHieu.md`.
 
