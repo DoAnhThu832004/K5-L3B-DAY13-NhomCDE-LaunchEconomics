@@ -10,11 +10,11 @@
 #   e) Mức chênh 6 điểm (859 mỗi nhóm), 20 nhân viên mỗi nhóm: m >= 299 yêu cầu/người (DE = 6,96)
 #
 # D2 · Năm câu kiểm tra "tách được tác động" với cách chia đã chọn (mỗi câu một dòng):
-#   1. Đối chứng chạy cùng thời gian: 
-#   2. Chia ngẫu nhiên hay do người chọn:
-#   3. Ảnh hưởng gián tiếp và cách giảm:
-#   4. Chỉ số chính, ngưỡng, ngày quyết định đã viết trước:
-#   5. Ít nhất 20 cụm mỗi nhóm:
+# 1. Đối chứng chạy cùng thời gian: 20 nhân viên xử lý thủ công song song với nhóm được cấp trợ lý, trên cùng phạm vi yêu cầu.
+# 2. Chia ngẫu nhiên hay do người chọn: Phân ngẫu nhiên theo nhân viên, có phân tầng theo depot, với mục tiêu 20 người mỗi bên.
+# 3. Ảnh hưởng gián tiếp và cách giảm: Hai nhóm có thể chia sẻ cách xử lý vì làm cùng depot. Giới hạn quyền dùng trợ lý theo staff_id và kiểm tra log truy cập.
+# 4. Chỉ số chính, ngưỡng, ngày quyết định đã viết trước: Chốt trước chỉ số đóng trong 24 giờ và không mở lại trong 7 ngày, các luật dừng và ngày tại decision_date.
+# 5. Ít nhất 20 cụm mỗi nhóm: Mỗi nhân viên là một cụm. Kế hoạch có 20 cụm mỗi bên khi rollout đạt 50%.
 #
 # Đánh đổi đã chấp nhận (nếu cách chia chưa đạt cả hai điều kiện): Chọn chia theo nhân viên (20 + 20), chấp nhận MDE 6 điểm (n=859/nhóm, m>=299); nếu tác động thật chỉ 5 điểm thì power giảm còn ~0,64.
 #
