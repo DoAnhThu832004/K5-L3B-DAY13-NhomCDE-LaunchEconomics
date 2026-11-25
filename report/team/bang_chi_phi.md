@@ -24,8 +24,8 @@ Số tính bằng `src/lab13.py`. Mọi con số tính từ cột `_simulated` g
 | Chi phí mỗi việc thành công | 4.472 | Tổng chi phí ÷ 978 việc thành công | simulated |
 | Hoá đơn token và tool chia cho số yêu cầu | 274,7 | (Token + tool) ÷ 1.200 yêu cầu | đo từ trace |
 
-- Chi phí mỗi việc thành công gấp bao nhiêu lần "hoá đơn chia số yêu cầu"? Gấp **16,3 lần** (`4.472 / 274,7`, simulated).
-- Khoản nào chiếm tỉ trọng lớn nhất trong tổng chi phí, bao nhiêu phần trăm? **Làm lại**, chiếm **51,8%** tổng chi phí (`2.264.000 đ / 4.373.585 đ`, simulated; theo sau là xem lại **40,7%**, simulated).
+- Chi phí mỗi việc thành công gấp bao nhiêu lần "hoá đơn chia số yêu cầu"? Gấp **16,3 lần** (`4.472 đ` [simulated] ÷ `274,7 đ`).
+- Khoản nào chiếm tỉ trọng lớn nhất trong tổng chi phí, bao nhiêu phần trăm? **Làm lại**, chiếm **51,8%** tổng chi phí (`2.264.000 đ / 4.373.585 đ`, simulated; theo sau là xem lại **40,7%**, giờ nhân viên chiếm tổng cộng **92,5%**).
 
 ## A3 · Tách theo loại yêu cầu
 
@@ -36,7 +36,7 @@ Số tính bằng `src/lab13.py`. Mọi con số tính từ cột `_simulated` g
 | quoc_te | 150 | 27,3% | 2,32 | 22.515 đ (simulated) | 1,88× (simulated) |
 | doi_tac | 68 | 54,4% | 1,88 | 10.215 đ (simulated) | 0,85× (simulated) |
 
-- Loại nào không đáng để trợ lý xử lý? Với loại đó, cho chạy lại tới 3 lần có giúp không? Loại **`quoc_te`** (**22.515 đ = 1,88×** của 12.000 đ, simulated; thành công chỉ **27,3%**). Cho chạy lại tới 3 lần **không giúp** vì tỉ lệ `ok` giảm mạnh qua từng lần thử (**30,0% → 11,4% → 2,2%**), chỉ tốn thêm chi phí.
+- Loại nào không đáng để trợ lý xử lý? Với loại đó, cho chạy lại tới 3 lần có giúp không? Loại **`quoc_te`** (**22.515 đ = 1,88×** mốc 12.000 đ, simulated; thành công chỉ **27,3%**). Chạy lại tới 3 lần **không giúp** vì tỉ lệ `ok` tụt từ **30,0% → 11,4% → 2,2%**; nên thu hẹp pilot về `noi_dia + hang_nang` (loại thêm `doi_tac` sát ngưỡng 0,85×).
 
 ## A4 · Chi phí cố định (phạm vi noi_dia + hang_nang)
 
