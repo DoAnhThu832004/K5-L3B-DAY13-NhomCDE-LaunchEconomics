@@ -5,7 +5,7 @@
 - Tên nhóm: NhomCDE
 - Lớp: L3B
 - Repo nhóm: `K5-L3B-DAY13-NhomCDE-LaunchEconomics` (xem [SUBMISSION.md](SUBMISSION.md))
-- URL repo, nhánh nộp, commit chốt: https://github.com/DoAnhThu832004/K5-L3B-DAY13-NhomCDE-LaunchEconomics, main, 9652ff1
+- URL repo, nhánh nộp, commit chốt: https://github.com/DoAnhThu832004/K5-L3B-DAY13-NhomCDE-LaunchEconomics, main, bb6d1d1
 
 ## Thành viên
 
