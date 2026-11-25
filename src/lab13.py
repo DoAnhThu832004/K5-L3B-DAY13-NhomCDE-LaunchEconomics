@@ -118,6 +118,45 @@ if __name__ == '__main__':
               f"cố định={co_dinh_moi_viec:>5,.0f} | cps+cđ={tong_cps:>5,.0f} ({tong_cps/BASELINE:.2f}x)")
 
     # TODO CP2 · Nhiệm vụ B: đổi từng yếu tố, ghi vào bảng độ nhạy.
+    print('\n--- B1-2 ---')
+    kich_ban = {
+        'Giá token gấp đôi':        dict(gia_vao=52, gia_ra=260),
+        'Giá token giảm một nửa':   dict(gia_vao=13, gia_ra=65),
+        'Xem lại gấp đôi':          dict(he_so_xem_lai=2),
+        'Xem lại giảm một nửa':     dict(he_so_xem_lai=0.5),
+        'Làm lại gấp đôi':          dict(he_so_lam_lai=2),
+        'Làm lại giảm một nửa':     dict(he_so_lam_lai=0.5),
+        'Lương tăng 25%':           dict(luong_phut=2500),
+        'Tối đa 2 lần chạy':        dict(max_lan_chay=2),
+        'Chỉ 1 lần chạy':           dict(max_lan_chay=1),
+        'Giá token gấp đôi, Xem lại gấp đôi':        dict(gia_vao=52, gia_ra=260, he_so_xem_lai=2)
+    }
+    goc = mo_hinh(runs, reqs)['cps']
+    for ten, kw in kich_ban.items():
+        cps = mo_hinh(runs, reqs, **kw)['cps']
+        print(f'{ten:25s} {cps:8,.0f} {(cps / goc - 1) * 100:+6.1f}%')
+        
+    print('\n--- B3 ---')
+    for k in [1, 2, 3]:
+        res = mo_hinh(runs, reqs, max_lan_chay=k)
+        khong_tc = len(reqs) - res['thanh_cong']
+        ca_he_thong = res['tong'] + khong_tc * 12000
+        print(f"Giới hạn {k} lần | Trợ lý: {res['tong']:,.0f} | Không TC: {khong_tc} | Cả hệ thống: {ca_he_thong:,.0f} | CPS: {res['cps']:,.0f}")
+    
+    print('\n--- B4 ---')
+    pv = reqs[reqs['loai'].isin(['noi_dia', 'hang_nang'])]
+    runs_pv = runs[runs['request_id'].isin(pv['request_id'])]
+
+    so_ca_ok = runs_pv[runs_pv['status'] == 'ok']['request_id'].nunique()
+    so_ca_lam_lai = (pv['ket_qua'] == 'lam_lai').sum()
+    so_thanh_cong = (pv['ket_qua'] == 'thanh_cong').sum()
+    tien_token_tool = (runs_pv['tokens_in']/1000*26 + runs_pv['tokens_out']/1000*130 + runs_pv['tool_calls']*15).sum()
+
+    tong_9p = tien_token_tool + so_ca_ok * 5 * 2000 + so_ca_lam_lai * 9 * 2000
+    tong_15_3p = tien_token_tool + so_ca_ok * 5 * 2000 + so_ca_lam_lai * 15.3 * 2000
+    print(f"\nB4 (9 phút làm lại): {tong_9p / so_thanh_cong:,.0f} đ ({tong_9p / so_thanh_cong / 12000:.2f}x)")
+    print(f"B4 (15,3 phút làm lại): {tong_15_3p / so_thanh_cong:,.0f} đ ({tong_15_3p / so_thanh_cong / 12000:.2f}x)")
+    
     # TODO CP4 · Nhiệm vụ D: cỡ mẫu.
     #   from statsmodels.stats.proportion import proportion_effectsize
     #   from statsmodels.stats.power import NormalIndPower
