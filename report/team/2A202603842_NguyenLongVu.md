@@ -4,7 +4,7 @@
 
 - Họ tên: Nguyễn Long Vũ
 - MSSV: 2A202603842
-- Email: nguyenlongvu17082004@gmail.com
+- Email: 26ai.vunl@vinuni.edu.vn
 - Vai trong nhóm: Người viết code (CP2 — đổi vai sau giờ giải lao 15:20) & Kế hoạch pilot (CP4)
 
 ## 2. Phần việc phụ trách
