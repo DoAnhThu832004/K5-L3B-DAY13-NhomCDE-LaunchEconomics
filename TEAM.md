@@ -9,12 +9,12 @@
 
 ## Thành viên
 
-| STT | Họ tên         | MSSV | Email | GitHub         | Vai trò     |
-| --: |----------------| ---- | ----- |----------------|-------------|
-|   1 | Đỗ Anh Thư     | 2A202603815 | adugarux4@gmail.com | DoAnhThu832004 | Người viết code (CP1, CP4) & Giữ hồ sơ |
-|   2 | Võ Thanh Huy   |      |  | VThanh-Huy     | Người kiểm số & Người gắn nhãn 1 (CP3) |
-|   3 | Nguyễn Long Vũ |      | | mhoo40         | Người viết code (CP2) & Kế hoạch pilot (CP4) |
-|   4 | Vũ Hiếu        |      |  | vuhieuvh       | Người gắn nhãn 2 (CP3) & Rà soát hồ sơ |
+| STT | Họ tên         | MSSV | Email | GitHub         | Vai trò                                                    |
+| --: |----------------| ---- | ----- |----------------|------------------------------------------------------------|
+|   1 | Đỗ Anh Thư     | 2A202603815 | adugarux4@gmail.com | DoAnhThu832004 | Người viết code (CP1, CP4) & Giữ hồ sơ & Người kiểm số CP4 |
+|   2 | Võ Thanh Huy   |      |  | VThanh-Huy     | Người kiểm số CP1 & Người gắn nhãn 1 (CP3)                 |
+|   3 | Nguyễn Long Vũ |      | | mhoo40         | Người viết code (CP2) & Kế hoạch pilot (CP4)               |
+|   4 | Vũ Hiếu        |      |  | vuhieuvh       | Người gắn nhãn 2 (CP3) & Rà soát hồ sơ                     |
 
 Bốn vai của lab:
 
@@ -40,12 +40,12 @@ Ví dụ: `report/team/20241234_NguyenVanAn.md`.
 ### Phần việc phụ trách
 
 - Trưởng nhóm, điều phối chung tiến độ 5 checkpoint và quản lý PR trên GitHub.
-- Người viết code CP1 (A1–A4) và CP4 (D1).
+- Người viết code CP1 (A1–A4) và CP4 (D1), Người kiểm số CP4 .
 - Trực tiếp hoàn thiện và rà soát các file `pilot_plan.yaml`, `phieu_cham.md`, `chi_so.md`, `ho_so_launch_v0.md` và `group_report.md`.
 
 ### Đóng góp cụ thể
 
-- Hiện thực hóa 3 hàm xác suất A1, hàm `mo_hinh` A2, phân loại A3 và cố định A4 trong `src/lab13.py`.
+- Hiện thực hóa 3 hàm xác suất A1, hàm `mo_hinh` A2, phân loại A3 và cố định A4 trong `src/lab13.py`, người kiểm số CP4.
 - Viết code tính cỡ mẫu D1 và tỉ lệ mở lại nền trong `src/lab13.py`; điền D1, cỡ mẫu, đánh đổi, D2 và sửa ngày quyết định trong `pilot_plan.yaml`.
 - Điền phiếu chấm duyệt chéo `phieu_cham.md` cho nhóm EA1125 đạt 30/30 điểm kèm câu hỏi phản biện.
 - Đặc tả 10 event có `trace_id` trong `chi_so.md`, tổng hợp bảng 7 mục và 4 điều kiện trong `ho_so_launch_v0.md`.
